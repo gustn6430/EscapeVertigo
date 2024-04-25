@@ -16,6 +16,8 @@ namespace SmallScaleInteractive._2DCharacter
         public float groundCheckRadius = 0.2f; // Adjust based on your needs
         public bool isCurrentlyJumping = false;
         public bool isGrounded;
+        public BoxCollider2D charCollider;
+        public Vector2 jumpColliderSize;
 
         public float movementSpeed = 15f; // Adjustable speed of the character
 
@@ -23,6 +25,7 @@ namespace SmallScaleInteractive._2DCharacter
         {
             animator = GetComponent<Animator>();
             rb = GetComponent<Rigidbody2D>();
+            charCollider.size = new Vector2(0.45f, 0.8f);
         }
 
 
@@ -173,6 +176,10 @@ namespace SmallScaleInteractive._2DCharacter
                     animator.SetBool("isJumpMid", false);
                     animator.SetBool("isFalling", true);
                     isMoving = false;
+
+                    //콜라이더 세팅
+                 charCollider.size = new Vector2(0.4f , 0.4f);
+
                 }
             }
             
@@ -188,6 +195,9 @@ namespace SmallScaleInteractive._2DCharacter
                 } else {
                     animator.SetTrigger("isLanding");
                 }
+
+             //   charCollider.size = new Vector2(0.45f, 0.8f);
+
             }
 
             // Check for jump initiation
