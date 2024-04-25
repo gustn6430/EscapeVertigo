@@ -17,7 +17,7 @@ namespace SmallScaleInteractive._2DCharacter
         public bool isCurrentlyJumping = false;
         public bool isGrounded;
 
-        public float movementSpeed = 5f; // Adjustable speed of the character
+        public float movementSpeed = 15f; // Adjustable speed of the character
 
         void Start()
         {
@@ -28,11 +28,7 @@ namespace SmallScaleInteractive._2DCharacter
 
         void Update()
         {
-            if (Input.GetMouseButton(0) && EventSystem.current.IsPointerOverGameObject())
-            {
-                // Exit the update method early if we're clicking on a UI element
-                return;
-            }
+           
             bool moveEast = Input.GetKey(KeyCode.D);
             bool moveWest = Input.GetKey(KeyCode.A);
             bool isSliding = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
