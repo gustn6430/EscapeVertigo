@@ -196,7 +196,7 @@ namespace SmallScaleInteractive._2DCharacter
                     animator.SetTrigger("isLanding");
                 }
 
-             //   charCollider.size = new Vector2(0.45f, 0.8f);
+             //  charCollider.size = new Vector2(0.45f, 0.8f);
 
             }
 
