@@ -25,7 +25,7 @@ namespace SmallScaleInteractive._2DCharacter
         {
             animator = GetComponent<Animator>();
             rb = GetComponent<Rigidbody2D>();
-            charCollider.size = new Vector2(0.45f, 0.8f);
+        //     charCollider.size = new Vector2(0.45f, 0.8f);
         }
 
 
@@ -46,7 +46,7 @@ namespace SmallScaleInteractive._2DCharacter
             bool isDying = Input.GetKeyDown(KeyCode.V);
             bool isTakingDamage = Input.GetKeyDown(KeyCode.F);
 
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+            // isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
             // Handle crouching
             animator.SetBool("isCrouching", isCrouching);
