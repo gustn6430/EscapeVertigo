@@ -18,7 +18,7 @@ public class MainUIController : MonoBehaviour
     }
     public void GameStart()
     {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Intro 1");
         Debug.Log("Game Start go");
     }
     public void GameExit()

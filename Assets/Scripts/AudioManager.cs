@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;  // instance 필드를 public으로 변경
-    public AudioSource audioSource;
+    public static AudioManager instance;
+    public AudioSource backgroundAudioSource;
 
     public AudioClip backgroundMusic;
 
@@ -13,10 +13,10 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            audioSource = gameObject.AddComponent<AudioSource>();
-            audioSource.clip = backgroundMusic;
-            audioSource.loop = true;
-            audioSource.Play();
+            backgroundAudioSource = gameObject.AddComponent<AudioSource>();
+            backgroundAudioSource.clip = backgroundMusic;
+            backgroundAudioSource.loop = true;
+            backgroundAudioSource.Play();
         }
         else
         {
@@ -26,9 +26,16 @@ public class AudioManager : MonoBehaviour
 
     public static void SetVolume(float volume)
     {
-        if (instance != null && instance.audioSource != null)
+        if (instance != null)
         {
-            instance.audioSource.volume = volume;
+            if (instance.backgroundAudioSource != null)
+            {
+                instance.backgroundAudioSource.volume = volume;
+            }
+            foreach (var audioSource in FindObjectsOfType<AudioSource>())
+            {
+                audioSource.volume = volume;
+            }
         }
     }
 }

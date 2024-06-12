@@ -528,6 +528,100 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2666279230548020346, guid: 265ca0ac84ca2464dba4b9ac43c59afa, type: 3}
   m_PrefabInstance: {fileID: 3100681896655727804}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1454349419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1454349420}
+  - component: {fileID: 1454349421}
+  m_Layer: 0
+  m_Name: IntroSceneMove
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1454349420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454349419}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.443225, y: -6.2087436, z: -0.34300983}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1454349421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454349419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 392f337aed896934588514f7d5a61515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueScript: {fileID: 140975352}
+  targetLine: "\uCE74\uC77C : (\uC5B4\uCC0C\uD558\uBA74 \uC774\uACF3\uC774 \uC6B0\uB9AC\uB4E4\uC758
+    \uB9C8\uC9C0\uB9C9\uC774 \uB420 \uC7A5\uC18C\uC774\uB9AC\uB77C...)"
+  targetSceneName: Prison cell 1
+--- !u!1 &1474000251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1474000253}
+  - component: {fileID: 1474000252}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1474000252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474000251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75d7d6616d631eb4fa349cac399203ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundAudioSource: {fileID: 0}
+  backgroundMusic: {fileID: 8300000, guid: c29ae0ba924b91a4493152c3de32b037, type: 3}
+--- !u!4 &1474000253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474000251}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3647796, y: 1.0352964, z: -10.058935}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1521785805 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2301908486616834357, guid: 01fed0e1a26b7e742833973337b47041, type: 3}
@@ -979,3 +1073,5 @@ SceneRoots:
   - {fileID: 6008018468358501102}
   - {fileID: 3100681896655727804}
   - {fileID: 570234592673650956}
+  - {fileID: 1474000253}
+  - {fileID: 1454349420}

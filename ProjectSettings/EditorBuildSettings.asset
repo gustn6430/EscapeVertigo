@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/START.unity
+    path: Assets/Scenes/Start.unity
     guid: 148e705d6dc195d41b47be156f2c473a
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainUI.unity
+    guid: d35ccbd371d0b9b4bb2d3e87c981f96e
+  - enabled: 1
+    path: Assets/Scenes/Intro 1.unity
+    guid: d6f70cec3ac2afe43a2103d3174e3d30
+  - enabled: 1
+    path: Assets/Scenes/prison cell 1.unity
+    guid: 548bab1481a35cf42a3c2147c4f926fa
+  - enabled: 1
+    path: Assets/Scenes/PrisonHall2.unity
+    guid: 6becea2b45002ab4096ba3b7628fed55
   m_configObjects: {}

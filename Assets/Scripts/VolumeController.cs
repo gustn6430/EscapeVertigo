@@ -10,7 +10,7 @@ public class VolumeController : MonoBehaviour
         if (volumeSlider != null)
         {
             volumeSlider.onValueChanged.AddListener(AudioManager.SetVolume);
-            volumeSlider.value = AudioManager.instance != null ? AudioManager.instance.audioSource.volume : 0.5f;
+            volumeSlider.value = AudioManager.instance != null ? AudioManager.instance.backgroundAudioSource.volume : 0.5f;
         }
     }
 }

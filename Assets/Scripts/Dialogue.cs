@@ -112,5 +112,14 @@ public class Dialogue : MonoBehaviour
             }
         }
     }
+    // 현재 라인이 특정 문자열과 같은지 확인하는 메서드 추가
+    public bool IsLineEqual(string line)
+    {
+        return lines[index] == line;
+    }
 
+    public void SetVolume(float volume)
+    {
+        AudioManager.SetVolume(volume);
+    }
 }    
