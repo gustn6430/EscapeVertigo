@@ -42,6 +42,18 @@ EditorBuildSettings:
     path: "Assets/Scenes/\uC52C\uC5F0\uACB0\uD568/MedicalHall.unity"
     guid: 00a782cedcb77e54ab0520f13e960358
   - enabled: 1
+    path: Assets/Scenes/PrisonHall2 CL.unity
+    guid: e146919a12ed4754cb221a1ee274d246
+  - enabled: 1
+    path: Assets/Scenes/PrisonHall CL.unity
+    guid: 081cebbec093a4e47b4f338cd1d2c425
+  - enabled: 1
+    path: Assets/Scenes/prison cell 1 CL.unity
+    guid: a9135b71c0e5832499e95474dcd9a379
+  - enabled: 1
+    path: Assets/Scenes/MedicalRoom CL.unity
+    guid: d1e2b95240f313542ad7041d39a42535
+  - enabled: 1
     path: "Assets/Scenes/\uC52C\uC5F0\uACB0\uD568/MainHall.unity"
     guid: 8c530f93838c37d4e9772f7a04b1deeb
   - enabled: 1

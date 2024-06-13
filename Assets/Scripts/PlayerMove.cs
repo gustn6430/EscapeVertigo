@@ -113,11 +113,11 @@ public class PlayerMove : MonoBehaviour
         {
             switch (currentScene)
             {
-                case "PrisonHall2":
+                case "PrisonHall2 CL":
                     Debug.Log("Transitioning to PrisonHall");
-                    SceneManager.LoadScene("PrisonHall");
+                    SceneManager.LoadScene("PrisonHall CL");
                     break;
-                case "PrisonHall":
+                case "PrisonHall CL":
                     Debug.Log("Transitioning to MainHall");
                     SceneManager.LoadScene("MainHall");
                     break;
@@ -126,8 +126,8 @@ public class PlayerMove : MonoBehaviour
                     SceneManager.LoadScene("MedicalHall");
                     break;
                 case "PrisonHall2 R":
-                    Debug.Log("Transitioning to PrisonHall");
-                    SceneManager.LoadScene("PrisonHall");
+                    Debug.Log("Transitioning to PrisonHall ");
+                    SceneManager.LoadScene("PrisonHall CL");
                     break;
                 case "PrisonHall R":
                     Debug.Log("Transitioning to MainHall");

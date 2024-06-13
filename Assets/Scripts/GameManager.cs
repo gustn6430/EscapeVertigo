@@ -30,7 +30,11 @@ public class GameManager : MonoBehaviour
                 talkText.text = "문이 열렸습니다.";
                 StartCoroutine(OpenDoorAndChangeScene());
             }
-            else
+            else if (objData != null && objData.id == 501)
+            {
+                talkText.text = "문이 열렸습니다.";
+                StartCoroutine(OpenDoorAndChangeSceneMed());
+            }
             {
                 talkText.text = "이것의 이름은 " + scanObj.name + "이라고 한다.";
             }
@@ -44,6 +48,13 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2f); // 2초 대기
         talkPanel.SetActive(false); // talkPanel 비활성화
         isAction = false; // isAction 플래그 업데이트
-        SceneManager.LoadScene("PrisonHall2"); // Mainhall 씬으로 전환
+        SceneManager.LoadScene("PrisonHall2 CL"); // Mainhall 씬으로 전환
+    }
+    private IEnumerator OpenDoorAndChangeSceneMed()
+    {
+        yield return new WaitForSeconds(2f); // 2초 대기
+        talkPanel.SetActive(false); // talkPanel 비활성화
+        isAction = false; // isAction 플래그 업데이트
+        SceneManager.LoadScene("MedicalRoom CL"); // Mainhall 씬으로 전환
     }
 }

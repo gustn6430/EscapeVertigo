@@ -575,7 +575,7 @@ MonoBehaviour:
   dialogueScript: {fileID: 140975352}
   targetLine: "\uCE74\uC77C : (\uC5B4\uCC0C\uD558\uBA74 \uC774\uACF3\uC774 \uC6B0\uB9AC\uB4E4\uC758
     \uB9C8\uC9C0\uB9C9\uC774 \uB420 \uC7A5\uC18C\uC774\uB9AC\uB77C...)"
-  targetSceneName: Prison cell 1
+  targetSceneName: Prison cell 1 CL
 --- !u!1 &1474000251
 GameObject:
   m_ObjectHideFlags: 0

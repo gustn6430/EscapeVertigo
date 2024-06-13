@@ -5,7 +5,7 @@ public class IntroSceneMove : MonoBehaviour
 {
     public Dialogue dialogueScript;
     public string targetLine = "카일 : (어찌하면 이곳이 우리들의 마지막이 될 장소이리라...)";
-    public string targetSceneName = "Prison cell 1";
+    public string targetSceneName = "prison cell 1 CL";
 
     void Update()
     {
