@@ -91,13 +91,15 @@ public class PlayerMove : MonoBehaviour
 
     void Scan()
     {
-        RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, dirVec, 0.7f, LayerMask.GetMask("Object"));
-        Debug.DrawRay(rigid.position, dirVec * 0.7f, new Color(0, 1, 0), 1.0f);
+        
+            RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, dirVec, 0.7f, LayerMask.GetMask("Object"));
+            Debug.DrawRay(rigid.position, dirVec * 0.7f, new Color(0, 1, 0), 1.0f);
 
-        if (rayHit.collider != null)
-            scanObject = rayHit.collider.gameObject;
-        else
-            scanObject = null;
+            if (rayHit.collider != null)
+                scanObject = rayHit.collider.gameObject;
+            else
+                scanObject = null;
+        
     }
 
     void CheckSceneTransition()
