@@ -12,6 +12,8 @@ public class TypingEffect : MonoBehaviour
     public GameObject textObject;       // Text (TMP) 오브젝트
 
     private int currentDialogueIndex = 0; // 현재 대사 인덱스
+    private RectTransform imageRectTransform; // Image 오브젝트의 RectTransform
+    private RectTransform textRectTransform; // Text 오브젝트의 RectTransform
 
     void Start()
     {
@@ -21,6 +23,12 @@ public class TypingEffect : MonoBehaviour
         if (speechText == null) Debug.LogError("SpeechText가 할당되지 않았습니다!");
         if (imageObject == null) Debug.LogError("ImageObject가 할당되지 않았습니다!");
         if (textObject == null) Debug.LogError("TextObject가 할당되지 않았습니다!");
+
+        imageRectTransform = imageObject.GetComponent<RectTransform>();
+        if (imageRectTransform == null) Debug.LogError("ImageObject의 RectTransform이 할당되지 않았습니다!");
+
+        textRectTransform = textObject.GetComponent<RectTransform>();
+        if (textRectTransform == null) Debug.LogError("TextObject의 RectTransform이 할당되지 않았습니다!");
     }
 
     public void StartTyping()
@@ -48,6 +56,7 @@ public class TypingEffect : MonoBehaviour
             foreach (char letter in fullText.ToCharArray())
             {
                 speechText.text += letter;  // 한 글자씩 추가
+                AdjustImageSize(); // 글자가 추가될 때마다 이미지 크기 조정
                 yield return new WaitForSeconds(typingSpeed); // 지연 시간
             }
 
@@ -59,6 +68,17 @@ public class TypingEffect : MonoBehaviour
         Debug.Log("Typing completed"); // 타이핑 완료 로그
         SetChildrenActive(false); // 타이핑 종료 시 Image와 Text (TMP) 비활성화
         Debug.Log("Children set to inactive"); // 비활성화 로그
+    }
+
+    private void AdjustImageSize()
+    {
+        Vector2 textSize = speechText.GetPreferredValues(speechText.text);
+        textRectTransform.sizeDelta = textSize;
+        // 여기서 이미지 크기를 텍스트 크기에 맞춰 조정하며 여백을 넉넉하게 설정합니다.
+        float widthPadding = 40f; // 너비 여백
+        float heightPadding = 20f; // 높이 여백
+        imageRectTransform.sizeDelta = new Vector2(textSize.x + widthPadding, textSize.y + heightPadding); // 말풍선 여백 추가
+        Debug.Log("Adjusted image size: " + imageRectTransform.sizeDelta);
     }
 
     public void SetChildrenActive(bool isActive)

@@ -50,6 +50,7 @@ public class FollowPlayer : MonoBehaviour
         {
             Debug.LogError("부모 Canvas의 RectTransform이 존재하지 않습니다!");
             enabled = false;
+            return;
         }
     }
 
@@ -65,18 +66,24 @@ public class FollowPlayer : MonoBehaviour
     private void UpdateImagePosition()
     {
         // 플레이어의 월드 좌표를 Canvas의 로컬 좌표로 변환
-        Vector2 viewportPosition = Camera.main.WorldToViewportPoint(player.position);
+        Vector3 worldPosition = new Vector3(player.position.x, player.position.y + 2f, player.position.z);
+        Vector2 viewportPosition = Camera.main.WorldToViewportPoint(worldPosition);
         Vector2 canvasSize = canvasRectTransform.sizeDelta;
-        Vector2 newPosition = new Vector2(viewportPosition.x * canvasSize.x, viewportPosition.y * canvasSize.y);
+        Vector2 newPosition = new Vector2(
+            viewportPosition.x * canvasSize.x,
+            viewportPosition.y * canvasSize.y
+        );
 
-        // 원하는 만큼 이미지의 위치를 조정합니다
-        newPosition += new Vector2(-505, -430);
+        // 이미지의 하단 부분이 플레이어 Y + 2에 위치하도록 조정
+        RectTransform imageRect = imageTransform.GetComponent<RectTransform>();
+        newPosition -= (canvasSize / 2.0f);
+        newPosition.y -= imageRect.sizeDelta.y / 2;
 
         // Image 오브젝트의 위치를 설정
         imageTransform.anchoredPosition = newPosition;
 
         // 디버깅을 위한 로그 추가
-        Debug.Log("Player position: " + player.position.x);
+        Debug.Log("Player position Y + 2: " + (player.position.y + 2f));
         Debug.Log("Image position: " + newPosition);
     }
 
@@ -92,6 +99,32 @@ public class FollowPlayer : MonoBehaviour
             typingEffect.StartTyping(); // TypingEffect의 StartTyping 메서드 호출
             Debug.Log("StartTyping method called"); // StartTyping 호출 확인을 위한 로그
             hasTriggeredTyping = true; // 한 번만 실행되도록 플래그 설정
+
+            // 스피치 버블 위치 설정
+            SetSpeechBubblePosition();
         }
+    }
+
+    private void SetSpeechBubblePosition()
+    {
+        // 플레이어의 스크린 좌표를 가져옴
+        Vector3 worldPosition = new Vector3(-2f, -1f, player.position.z);
+        Vector2 viewportPosition = Camera.main.WorldToViewportPoint(worldPosition);
+        Vector2 canvasSize = canvasRectTransform.sizeDelta;
+        Vector2 bubblePosition = new Vector2(
+            viewportPosition.x * canvasSize.x,
+            viewportPosition.y * canvasSize.y
+        );
+
+        // 이미지의 하단 부분이 설정된 Y 값에 위치하도록 조정
+        RectTransform imageRect = imageTransform.GetComponent<RectTransform>();
+        bubblePosition -= (canvasSize / 2.0f);
+        bubblePosition.y -= imageRect.sizeDelta.y / 2;
+
+        // 스피치 버블의 위치를 설정
+        imageTransform.anchoredPosition = bubblePosition;
+
+        // 디버깅을 위한 로그 추가
+        Debug.Log("Bubble position: " + bubblePosition);
     }
 }
