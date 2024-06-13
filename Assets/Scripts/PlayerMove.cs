@@ -107,36 +107,54 @@ public class PlayerMove : MonoBehaviour
         Debug.Log("Player Position: " + transform.position.x);
 
         // 왼쪽 끝에서 다음 씬으로 전환
-        if (currentScene == "PrisonHall2" && transform.position.x <= transitionThresholdLeft)
+        if (transform.position.x <= transitionThresholdLeft)
         {
-            Debug.Log("Transitioning to PrisonHall");
-            SceneManager.LoadScene("PrisonHall");
-        }
-        else if (currentScene == "PrisonHall" && transform.position.x <= transitionThresholdLeft)
-        {
-            Debug.Log("Transitioning to MainHall");
-            SceneManager.LoadScene("MainHall");
-        }
-        else if (currentScene == "MainHall" && transform.position.x <= transitionThresholdLeft)
-        {
-            Debug.Log("Transitioning to MedicalHall");
-            SceneManager.LoadScene("MedicalHall");
+            switch (currentScene)
+            {
+                case "PrisonHall2":
+                    Debug.Log("Transitioning to PrisonHall");
+                    SceneManager.LoadScene("PrisonHall");
+                    break;
+                case "PrisonHall":
+                    Debug.Log("Transitioning to MainHall");
+                    SceneManager.LoadScene("MainHall");
+                    break;
+                case "MainHall":
+                    Debug.Log("Transitioning to MedicalHall");
+                    SceneManager.LoadScene("MedicalHall");
+                    break;
+                case "PrisonHall2 R":
+                    Debug.Log("Transitioning to PrisonHall");
+                    SceneManager.LoadScene("PrisonHall");
+                    break;
+                case "PrisonHall R":
+                    Debug.Log("Transitioning to MainHall");
+                    SceneManager.LoadScene("MainHall");
+                    break;
+                case "MainHall R":
+                    Debug.Log("Transitioning to MedicalHall");
+                    SceneManager.LoadScene("MedicalHall");
+                    break;
+            }
         }
         // 오른쪽 끝에서 이전 씬으로 전환
-        else if (currentScene == "MedicalHall" && transform.position.x >= transitionThresholdRight)
+        else if (transform.position.x >= transitionThresholdRight)
         {
-            Debug.Log("Transitioning to MainHall");
-            SceneManager.LoadScene("MainHall");
-        }
-        else if (currentScene == "MainHall" && transform.position.x >= transitionThresholdRight)
-        {
-            Debug.Log("Transitioning to PrisonHall");
-            SceneManager.LoadScene("PrisonHall");
-        }
-        else if (currentScene == "PrisonHall" && transform.position.x >= transitionThresholdRight)
-        {
-            Debug.Log("Transitioning to PrisonHall2");
-            SceneManager.LoadScene("PrisonHall2");
+            switch (currentScene)
+            {
+                case "MedicalHall":
+                    Debug.Log("Transitioning to MainHall");
+                    SceneManager.LoadScene("MainHall R");
+                    break;
+                case "MainHall":
+                    Debug.Log("Transitioning to PrisonHall");
+                    SceneManager.LoadScene("PrisonHall R");
+                    break;
+                case "PrisonHall":
+                    Debug.Log("Transitioning to PrisonHall2");
+                    SceneManager.LoadScene("PrisonHall2 R");
+                    break;
+            }
         }
     }
 }

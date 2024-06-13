@@ -6332,9 +6332,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 1
   acceleration: 10
-  runMultiplier: 4
+  runMultiplier: 20
   targetTag: Obstacle
   manager: {fileID: 546892679}
+  transitionThresholdLeft: -30
+  transitionThresholdRight: 30
 --- !u!70 &702831044
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
