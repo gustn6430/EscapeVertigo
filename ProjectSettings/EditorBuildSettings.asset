@@ -24,6 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/prison cell 1.unity
     guid: 548bab1481a35cf42a3c2147c4f926fa
   - enabled: 1
+    path: Assets/Scenes/MedicalRoom.unity
+    guid: ec174bcc7d69ba5428a65a4c74de2f94
+  - enabled: 1
+    path: Assets/Scenes/MainHall.unity
+    guid: 8c530f93838c37d4e9772f7a04b1deeb
+  - enabled: 1
     path: Assets/Scenes/PrisonHall2.unity
     guid: 6becea2b45002ab4096ba3b7628fed55
   m_configObjects: {}
